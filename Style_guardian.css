@@ -1,0 +1,554 @@
+
+/* applicant home page CSS */
+
+#b1 {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column; /* Ensure elements are stacked vertically */
+    background-color: #ffffff;
+background-image: linear-gradient(315deg, #bce1ff 0%, #77b0f1 74%);
+    
+    margin: 0;
+}
+
+.navbar {
+    background-color: #add3ff;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: sticky; /* Keep navbar at the top */
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .left-nav {
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+    gap: 30px;
+}
+
+.navbar a {
+    float: left;
+    display: block;
+    color: #333;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.navbar .left-nav a:hover, .dropdown:hover .dropbtn {
+    background-color: #73b2f9;
+}
+
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+.dropdown .dropbtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: #333;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin: 0;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
+.dropdown-content a:hover {
+    /*background-color: #ddd;*/
+    background-color: #d7ecfc;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.toggle-btn{
+    padding: 17px; 
+    border: none; 
+    background: none; 
+    cursor: pointer;
+  
+}
+.toggle-btn.dark-mode{
+    padding: 17px; 
+    border: none; 
+    background: none; 
+    cursor: pointer;
+    color: #fafcff;
+    
+}
+
+/* logo Style */
+.navbar .right-nav{
+    display: flex;
+    align-items: center;
+}
+
+.Registro {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1.4rem;
+    color: #f2f2f2;
+    text-decoration: none;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+
+
+.container{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 30px;
+}
+.container .drop{
+    width: 350px;
+    height: 400px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    box-shadow: inset 20px 20px 20px rgba(0,0,0,0.05),
+                25px 35px 20px rgba(0,0,0,0.05),
+                25px 20px 20px rgba(0,0,0,0.05),
+                inset 25px 30px 30px rgba(255,255,255,0.9);
+    animation: slide 2s linear;
+}
+@keyframes slide{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+.container .drop:nth-child(1){
+    border-radius: 67% 33% 28% 72% / 59% 52% 48% 41% ;
+    margin: 20px 30px 30px 0;
+    background-color: #e7e7fc;
+}
+.container .drop:nth-child(2){
+    border-radius: 15% 85% 53% 47% / 55% 41% 59% 45%  ;
+    margin: 30px 40px 40px 0;
+    background-color: #eeeeff;
+}
+.container .drop::before{
+    content: '';
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    background-color: #ffffffc8;
+    top: 50px;
+    left: 80px;
+    border-radius: 50%;
+    opacity: 0.8;
+}
+.container .drop::after{
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: #ffffffc8;
+    top: 90px;
+    left: 210px;
+    border-radius: 50%;
+    opacity: 0.8;
+}
+.container .drop .content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 40px 60px;
+    gap: 15px;
+}
+.container .drop .content h2{
+    position: relative;
+    width: 60px;
+    height: 60px;
+    margin-bottom: 3px;
+    margin-top: 3px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    color: var(--clr);
+    box-shadow: inset 2px 5px 10px rgba(0,0,0,0.1),
+                inset -2px -5px 10px rgba(255,255,255,1),
+                15px 15px 10px rgba(0,0,0,0.05),
+                15px 10px 15px rgba(0,0,0,0.25);
+}
+.container .drop .content h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--clr);
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.container .drop .content p {
+    font-size: 1rem;
+    color: #333;
+    text-align: center;
+    line-height: 1.5;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    max-width: 280px;
+    margin: 0 auto;
+    opacity: 0.9;
+}
+
+.container .drop .content a{
+    position: relative;
+    padding: 10px 20px;
+    background-color: var(--clr);
+    border-radius: 20px;
+    color: #fff;
+    text-shadow: 2px 5px 5px rgba(255,255,255,0.5);
+    cursor: pointer;
+    transition: background-color 0.5s, color 0.5s;
+    box-shadow: inset 2px 5px 10px rgba(0,0,0,0.1),
+                inset -2px -5px 10px rgba(255,255,255,0.1),
+                10px 10px 5px rgba(0,0,0,0.05),
+                10px 10px 5px rgba(0,0,0,0.25);
+}
+.container .drop .content a:hover{
+    background-color: #fff;
+    color: var(--clr);
+}
+
+/* -----Media Query----- */
+
+@media only screen and (max-width:800px) {
+    .container .drop{
+        width: 275px;
+        height: 275px;
+    }
+}
+@media only screen and (max-width:600px) {
+    .container{
+        flex-direction: column;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* guardian application form CSS */
+
+#b2 {
+    background-image: url(image/scl.jpg);
+    background-position: center top;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+.guardian-container h1 {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    color: #eeff00;
+}
+
+.guardian-container form {
+    background-color: #fff;
+    padding: 50px;
+    max-width: 700px;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.guardian-container h2{
+    font-size: 25px;
+    color: #200a9b;
+    margin-top: 20px;
+    
+}
+.guardian-container label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+
+input[type="text"], input[type="email"], input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+    font-size: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+input[type="text"]:focus, input[type="email"]:focus, input[type="number"]:focus {
+    outline: none;
+    border-color: #66afe9;
+    box-shadow: 0 0 8px rgba(102, 175, 233, 0.6);
+}
+
+select {
+    height: 45px; /* height of the items in the combo box */
+}
+
+/*wrapping the gender and data of birth field in a flexbox container */
+.flex-container{
+    display: flex;
+    justify-content: space-between;  /*space between fields and next form element*/
+}
+
+/*  First and last name wrap into a fex-container*/
+.fname-field , .lname-field{
+    flex: 1; 
+}
+
+.fname-field {
+    margin-right: 50px;
+}
+
+.name-field input{
+    width: 100%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #5e5d5d;
+}
+
+/* Ensure labels are aligned properly */
+.fname-field label, .lname-field label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* Adjust the layout for mobile responsiveness */
+@media (max-width: 768px) {
+    .flex-container {
+        flex-direction: column; /* Stack fields vertically on small screens */
+    }
+    .fname-field {
+        margin-right: 0; /* Remove margin when fields stack */
+    }
+}
+
+/* Gender drowpdown style*/
+.gender-field{
+    flex: 1;
+    margin-right: 30px; /* space between gender and dob */
+}
+
+.dob-field{
+    flex: 1;
+}
+
+.gender-field select, .dob-field input{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #5e5d5d;
+
+}
+
+.gender-field ::placeholder{
+    color: #5e5d5d;
+
+}
+
+/* File upload styling */
+input[type="file"] {
+    display: block; /* Make it a block element */
+    width: 100%; /* Full width */
+    padding: 10px; /* Add some padding */
+    border: 1px solid #ccc; /* Border style */
+    border-radius: 5px; /* Rounded corners */
+    margin-bottom: 20px; /* Spacing below */
+    font-size: 16px; /* Font size */
+    background-color: #f9f9f9; /* Light background color */
+}
+
+/* Change background on hover */
+input[type="file"]:hover {
+    background-color: #b3d2eb; /* Darker background on hover */
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+/* Custom file upload button */
+input[type="file"]::-webkit-file-upload-button {
+    background: #007bff; /* Button background color */
+    color: white; /* Button text color */
+    padding: 10px 15px; /* Button padding */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+}
+
+input[type="file"]::-webkit-file-upload-button:hover {
+    background: #0056b3; /* Darker blue on hover */
+}
+
+
+
+/* Gender drowpdown style*/
+.area-field{
+    flex: 1;
+    margin-right: 30px; /* space between gender and dob */
+}
+
+.GN-field{
+    flex: 1;
+}
+
+.area-field select, .GN-field select{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #5e5d5d;
+
+}
+
+/* Style for the checkbox and label */
+input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+    vertical-align: middle;
+    cursor: pointer;
+    
+}
+
+label.verified {
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    color: #333;
+    cursor: pointer;
+    margin-top: 30px;
+}
+
+
+
+button.resetBtn , button.submitBtn  {
+    width: 100%;
+    padding: 10px;
+    margin-top: 30px;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+button.resetBtn:hover , button.submitBtn:hover {
+    background-color: #0056b3;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Button style*/
+.resetBtn-field{
+    flex: 1;
+    margin-right: 30px; /* space between gender and dob */
+}
+
+.submitBtn-field{
+    flex: 1;
+}
+
+.resetBtn-field select, .submitBtn-field input{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+footer {
+    background-color: #17086a;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+}
+footer p {
+    margin: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

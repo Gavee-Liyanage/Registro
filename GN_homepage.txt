@@ -1,0 +1,58 @@
+<?php
+// Database connection
+$host = 'localhost:3306';
+$username = 'dbgavee';
+$password = '1234';
+$database = 'registrodb';
+
+$conn = new mysqli($host, $username, $password, $database);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Handle AJAX request to update guardian approval status
+if (isset($_POST['applicant_id']) && isset($_POST['approval_status'])) {
+    $applicant_id = $_POST['applicant_id'];
+    $approval_status = $_POST['approval_status'];
+
+    $updateQuery = "UPDATE applicant SET approval_status = ? WHERE applicant_id = ?";
+    $stmt = $conn->prepare($updateQuery);
+    $stmt->bind_param("ii", $approval_status, $applicant_id);
+    $stmt->execute();
+
+    if ($stmt->affected_rows > 0) {
+        echo "Approval status updated successfully!";
+    } else {
+        echo "Failed to update approval status!";
+    }
+
+    $stmt->close();
+    exit;
+}
+
+// Fetch all GN Areas for filtering
+$gnQuery = "SELECT * FROM grama_niladhari";
+$gnResult = $conn->query($gnQuery);
+
+// Fetch applicant data filtered by Grama Niladhari selection
+$gnAreaFilter = isset($_GET['gn_area_id']) ? $_GET['gn_area_id'] : null;
+
+if ($gnAreaFilter) {
+    $sql = "SELECT a.applicant_id, a.initial_name, a.gender, a.address, a.nic, a.approval_status
+            FROM applicant a
+            JOIN applicant_gn_area ag ON a.applicant_id = ag.applicant_id
+            WHERE ag.gn_area_id = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("i", $gnAreaFilter);
+    $stmt->execute();
+    $result = $stmt->get_result();
+} else {
+    // Default: show all applicants
+    $sql = "SELECT applicant_id, initial_name, gender, address, nic, approval_status FROM applicant";
+    $result = $conn->query($sql);
+}
+
+$conn->close();
+?>

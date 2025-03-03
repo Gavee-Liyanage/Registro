@@ -1,0 +1,125 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: rgb(240, 250, 255);
+    font-family: 'Arial', sans-serif;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #add3ff;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .left-nav {
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+    gap: 30px;
+}
+
+.navbar a {
+    float: left;
+    display: block;
+    color: #333;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.navbar .left-nav a:hover, .dropdown:hover .dropbtn {
+    background-color: #73b2f9;
+}
+
+/* logo Style */
+.navbar right-nav{
+    display: flex;
+    align-items: center;
+}
+
+.Registro {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1.4rem;
+    color: #f2f2f2;
+    text-decoration: none;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+#con1{
+    max-width: 1200px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+#con1 h1 {
+    font-family:'Cambria, Cochin, Georgia, Times, 'Times New Roman', serif MS', sans-serif, Verdana, sans-serif;
+    margin-bottom: 35px;
+    font-size: 28px;
+    font-weight: normal;
+    font-weight: 600;
+}
+
+/* Grid Layout */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.grid-item {
+    background-color:  #add3ff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.5s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.grid-item img {
+    width: 150px;
+    height: 130px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 10px rgba(238, 237, 237, 0.982);
+}
+
+.grid-item h3 {
+    padding-top: 20px;
+    margin-bottom: 5px;
+    font-size: 18px;
+    color: #000000;
+    font-weight: bold;
+}
+
+.grid-item p {
+    font-size: 14px;
+    color: #333;
+}
+
+.grid-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* View Button */
+.view-btn {
+    margin-top: 13px;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    background-color: #025abe;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.view-btn:hover {
+    background-color: #00317b;
+}

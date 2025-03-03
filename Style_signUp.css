@@ -1,0 +1,329 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: #f9f9f9;
+}
+
+
+.container {
+    display: flex;
+    width: 100%;
+    max-width: 2000px;
+    height: inherit;
+    background: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+
+.left-section {
+    flex: 1;
+    padding: 40px;
+    margin-bottom: 20px;
+}
+
+.logo {
+    font-size: 30px;
+    margin-top: 2px;
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 3px;
+    text-align: left;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+h2 {
+    font-size: 26px;
+    margin: 5px 0;
+    text-align: center;
+    color: #044386;
+    margin-top: 30px;
+}
+
+p {
+    font-size: 14px;
+    color: #044386;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1px;
+}
+
+
+.grid-container {
+    display: flex;
+    flex-direction: column; /* Stack items in a column */
+    gap: 12px; /* Reduce gap for a compact layout */
+    align-items: center; /* Center items horizontally */
+}
+
+.grid-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #9cc7f9;
+    border: 2px solid #ddd;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 80%; /* Control width */
+    max-width: 500px; /* Ensure it doesn't stretch too much */
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 3px;
+}
+
+.grid-item:hover {
+    border-color: #007bff;
+}
+
+.grid-item img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.grid-item h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.grid-item p {
+    margin: 2px 0 0;
+    font-size: 12px;
+    color: #555;
+}
+
+.grid-item a {
+    position: absolute;
+    right: 15px;
+}
+
+.login-btn {
+    padding: 8px 16px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 14px;
+}
+
+.login-btn:hover {
+    background: #0056b3;
+}
+
+.signup-text {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.signup-text a {
+    color: #d20808;
+    text-decoration: none;
+}
+
+.right-section {
+    flex: 1;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.right-section img {
+    max-width: 100%;
+    margin-bottom: 70px;
+    height: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: #f9f9f9;
+}
+
+
+.container {
+    display: flex;
+    width: 100%;
+    max-width: 2000px;
+    height: inherit;
+    background: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+
+.right-section {
+    flex: 1;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.right-section img {
+    max-width: 100%;
+    margin-bottom: 70px;
+    height: auto;
+}
+
+.right-section {
+    flex: 1;
+    padding: 40px;
+    margin-bottom: 20px;
+}
+
+.logo {
+    font-size: 30px;
+    margin-top: 2px;
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 3px;
+    text-align: right;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+h2 {
+    font-size: 26px;
+    margin: 5px 0;
+    text-align: center;
+    color: #044386;
+}
+
+p {
+    font-size: 14px;
+    color: #044386;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1px;
+}
+
+
+.grid-container {
+    display: flex;
+    flex-direction: column; /* Stack items in a column */
+    gap: 12px; /* Reduce gap for a compact layout */
+    align-items: center; /* Center items horizontally */
+}
+
+.grid-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #9cc7f9;
+    border: 2px solid #ddd;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 80%; /* Control width */
+    max-width: 500px; /* Ensure it doesn't stretch too much */
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 3px;
+}
+
+.grid-item:hover {
+    border-color: #007bff;
+}
+
+.grid-item img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.grid-item h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.grid-item p {
+    margin: 2px 0 0;
+    font-size: 12px;
+    color: #555;
+}
+
+.grid-item a {
+    position: absolute;
+    right: 15px;
+}
+
+.login-btn {
+    padding: 8px 16px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 14px;
+}
+
+.login-btn:hover {
+    background: #0056b3;
+}
+
+
+
+
+
+
+
+.signup-text {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.signup-text a {
+    color: #d20808;
+    text-decoration: none;
+}

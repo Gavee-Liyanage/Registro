@@ -1,0 +1,446 @@
+/* child form css */
+
+#b3 {
+    background-image: url(image/child.JPG);
+    background-position: center top;
+    font-family: Arial, sans-serif;
+    height: 100vh; /* Ensures the body takes up the full viewport height */
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background-color: #ffffff;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.navbar .left-nav {
+    display: flex;
+    gap: 20px; /* Adjust spacing between the links */
+    align-items: center;
+}
+
+.navbar a {
+    float: left;
+    display: block;
+    color: #333;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+    /*background-color: #575757;*/
+    background-color: #94c8f2;
+}
+
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+.dropdown .dropbtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: #333;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+
+.dropdown-content a:hover {
+    /*background-color: #ddd;*/
+    background-color: #d7ecfc;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Styling the logo */
+.logo {
+    height: 50px; /* Adjust the height of the logo */
+    width: auto; /* Maintain aspect ratio */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+/* Flexbox for images in the same row */
+.image-container {
+    margin-top: auto;
+    display: flex;          /* Enables Flexbox */
+    justify-content: space-between; /* Space between the two images */
+    align-items: center;    /* Vertically aligns the images */
+    padding: 60px;
+}
+
+.image {
+    width: 40%;             /* Adjust width to fit two images on the same line */
+    height: auto;
+    border-radius: 10px;    /* Optional: Adds rounded corners */
+}
+
+
+.child_container h1 {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.child_container form {
+    background-color: #fff;
+    padding: 50px;
+    max-width: 700px;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+
+}
+.child_container label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+input[type="text"], input[type="email"], input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+    font-size: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+input[type="text"]:focus, input[type="email"]:focus, input[type="number"]:focus {
+    outline: none;
+    border-color: #66afe9;
+    box-shadow: 0 0 8px rgba(102, 175, 233, 0.6);
+}
+
+select {
+    height: 45px; /* height of the items in the combo box */
+}
+
+/*wrapping the gender and data of birth field in a flexbox container */
+.flex-container{
+    display: flex;
+    justify-content: space-between;  /*space between fields and next form element*/
+}
+
+/*  First and last name wrap into a fex-container*/
+.fname-field , .lname-field{
+    flex: 1; 
+}
+
+.fname-field {
+    margin-right: 50px;
+}
+
+.name-field input{
+    width: 100%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #5e5d5d;
+}
+
+/* Ensure labels are aligned properly */
+.fname-field label, .lname-field label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* Adjust the layout for mobile responsiveness */
+@media (max-width: 768px) {
+    .flex-container {
+        flex-direction: column; /* Stack fields vertically on small screens */
+    }
+    .fname-field {
+        margin-right: 0; /* Remove margin when fields stack */
+    }
+}
+
+/* Gender drowpdown style*/
+.gender-field{
+    flex: 1;
+    margin-right: 30px; /* space between gender and dob */
+}
+
+.dob-field{
+    flex: 1;
+}
+
+.gender-field select, .dob-field input{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #5e5d5d;
+
+}
+
+.gender-field ::placeholder{
+    color: #5e5d5d;
+
+}
+
+.school-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    width: 300px;
+}
+
+.school-select-container select {
+    flex: 1;
+    padding: 8px;
+    margin-right: 10px;
+}
+
+.school-select-container i {
+    cursor: pointer;
+    margin-bottom: 17px;
+    margin-left: 10px;
+}
+
+
+/* File upload styling */
+input[type="file"] {
+    display: block; /* Make it a block element */
+    width: 100%; /* Full width */
+    padding: 10px; /* Add some padding */
+    border: 1px solid #ccc; /* Border style */
+    border-radius: 5px; /* Rounded corners */
+    margin-bottom: 20px; /* Spacing below */
+    font-size: 16px; /* Font size */
+    background-color: #f9f9f9; /* Light background color */
+}
+
+/* Change background on hover */
+input[type="file"]:hover {
+    background-color: #b3d2eb; /* Darker background on hover */
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+/* Custom file upload button */
+input[type="file"]::-webkit-file-upload-button {
+    background: #007bff; /* Button background color */
+    color: white; /* Button text color */
+    padding: 10px 15px; /* Button padding */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+}
+
+input[type="file"]::-webkit-file-upload-button:hover {
+    background: #0056b3; /* Darker blue on hover */
+}
+
+
+button.resetBtn , button.submitBtn  {
+    width: 100%;
+    padding: 10px;
+    margin-top: 30px;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+button.resetBtn:hover , button.submitBtn:hover {
+    background-color: #0056b3;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Button style*/
+.resetBtn-field{
+    flex: 1;
+    margin-right: 30px; /* space between gender and dob */
+}
+
+.submitBtn-field{
+    flex: 1;
+}
+
+.resetBtn-field select, .submitBtn-field input{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+
+footer {
+    background-color: #17086a;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+}
+footer p {
+    margin: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* applicant register css*/
+
+
+#b4 {
+    background-color: #e0f7ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container_2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f9f9f9;
+    border-radius: 15px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 70%;
+    height: auto;
+}
+
+.form_1-container {
+    padding: 40px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    width: 50%;
+}
+
+.form_1-container:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.form_1-container h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    
+}
+
+.input-group:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(149, 203, 247, 0.813);
+}
+
+input[type="text"], input[type="email"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus {
+    outline: none;
+    border-color: #66afe9;
+    box-shadow: 0 0 8px rgba(102, 175, 233, 0.6);
+}
+
+button.register-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button.register-btn:hover {
+    background-color: #0056b3;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.illustration img {
+    width: 400px;
+    height: 500px;
+    
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(238, 237, 237, 0.982);
+}
+
+.illustration {
+    margin-left: 20px;
+    box-shadow: 0 4px 10px rgba(238, 237, 237, 0.982);
+}

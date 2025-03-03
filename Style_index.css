@@ -1,0 +1,185 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background-color: #ffffff;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .left-nav {
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+    gap: 30px;
+}
+
+.navbar a {
+    float: left;
+    display: block;
+    color: #333;
+    text-align: center;
+    
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.navbar .left-nav a:hover, .dropdown:hover .dropbtn {
+    /*background-color: #575757;*/
+    background-color: #9dcbff;
+}
+
+.navbar a.active {
+    color: #fff;
+    background-color: #007bff;
+    padding: 10px 10px;
+    border-radius: 5px;
+}
+
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+.dropdown .dropbtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: #333;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+    
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fffefe;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    
+}
+
+.dropdown-content a:hover {
+    /*background-color: #ddd;*/
+    background-color: #d7ecfc;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* logo Style */
+.navbar right-nav{
+    display: flex;
+    align-items: center;
+}
+
+.Registro {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 27px;
+    color: #f2f2f2;
+    text-decoration: none;
+    margin-right: 10px;
+    font-weight: bold;
+}
+.login-btn {
+    background-color: #7ee8fa;
+background-image: linear-gradient(315deg, #34c1f8 0%, #a5f1f8 74%);
+
+    padding: 10px 15px;
+    margin-top: 3px;
+    margin-right: 10px;
+    margin-bottom: 3px;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    color: #ffffff; /* Ensure text color is white */
+    font-weight: bold; /* Make text more readable */
+    text-align: center; /* Center text */
+    display: inline-block; /* Prevent unexpected layout issues */
+}
+
+.login-btn:hover {
+    background-color: #306844;
+background-image: linear-gradient(314deg, #306844 0%, #2c4c3b 74%);
+
+    color: #ffffff; /* Keep text white on hover */
+}
+
+.login-btn a {
+    color: #ffffff !important; /* Ensure the text remains white */
+    text-decoration: none;
+    display: block; /* Make sure the link fills the button */
+    font-weight: bold;
+}
+
+.login-btn a:hover {
+    color: #ffffff !important; /* Keep text white on hover */
+}
+
+
+.header {
+    background: url(image/school_1.jpeg) no-repeat center center;
+    background-size: cover;
+    height: 535px;
+    color: white;
+    text-align: left; /* Change text alignment to left */
+    display: flex;
+    justify-content: flex-start; /* Align items to the left */
+    align-items: flex-start;
+    flex-direction: column;
+    padding-left: 30px; /* Add padding to push content away from the edge */
+
+
+}
+
+.header h1 {
+    width: 40%;
+    font-size: 3rem;
+    margin: 20;
+    padding-top: 70px;
+}
+
+.header p {
+    width: 40%;
+    font-size: 1.12rem;
+    margin: 10px 20;
+    padding-bottom: 20px;
+}
+
+.header .applyBtn a {
+    background-color: #0beef9;
+    background-image: linear-gradient(315deg, #0beef9 0%, #48a9fe 74%);
+    color: #000000;
+    border: none;
+    padding: 15px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 50px
+}
+
+.header .applyBtn :hover {
+    background-color: #0056B3;
+ }

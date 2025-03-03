@@ -1,0 +1,163 @@
+#b2{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: rgb(255, 255, 255);
+    font-family: 'Arial', sans-serif;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #add3ff;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    padding: 4.5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .left-nav {
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+    gap: 30px;
+}
+
+.navbar a {
+    float: left;
+    display: block;
+    color: #333;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.navbar .left-nav a:hover, .dropdown:hover .dropbtn {
+    background-color: #73b2f9;
+}
+
+/* logo Style */
+.navbar right-nav{
+    display: flex;
+    align-items: center;
+}
+
+.Registro {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1.3rem;
+    color: #f2f2f2;
+    text-decoration: none;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+
+/* Style for centering the <h1> */
+.h1 {
+    text-align: center;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 2rem;
+    color: #333;
+}
+
+/* Table styling for additional spacing and design */
+.table {
+    margin-top: 60px; /* Space between the table and the <h1> */
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th{
+    padding: 20px;
+    text-align: left;
+}
+
+.table td {
+    padding: 10px;
+    text-align: left;
+}
+
+.table th {
+    background-color: #9ccafe;
+    color: #333;
+    
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: #d7e9fd;
+}
+
+.table tbody tr:nth-child(odd) {
+    background-color: #fff;
+}
+
+/* Container alignment for consistent spacing */
+.container {
+    margin-top: 50px; /* Add spacing around the entire container */
+}
+
+
+
+.input-group {
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+    
+}
+
+.position-relative {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-grow: 1; /* Allow the input to expand and fill available space */
+}
+
+.search-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #aaa;
+}
+
+.clear-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #aaa;
+}
+
+#searchInput {
+    padding-left: 40px; /* Space for the search icon */
+    padding-right: 40px; /* Space for the clear icon */
+    width: 100%; /* Make the input expand */
+}
+
+.btn {
+    margin-left: 30px; /* Space between input and button */
+}
+
+/* Add Admin Button Styling */
+.btn-success {
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: #2db64d;
+    border: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 30px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+    text-decoration: none;
+}
+
+
