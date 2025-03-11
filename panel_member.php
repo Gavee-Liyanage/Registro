@@ -1,5 +1,9 @@
 <?php
 
+session_start();
+
+require_once __DIR__ ."/Mail.php";
+
 $host = 'localhost:3306';
 $username = 'dbgavee';
 $password = '1234';
@@ -12,7 +16,7 @@ if ($conn->connect_error) {
 }
 
 // Assume the logged-in GN area ID is stored in a session variable
-session_start();
+
 if (!isset($_SESSION['panel_id'])) {
     header("Location: panel_login.php");
     exit;
@@ -105,6 +109,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($stmt) {
             $stmt->bind_param("iiii", $sclApproval, $panelId, $childId, $schoolId);
             if ($stmt->execute()) {
+
+                // Fetch the applicant_id associated with the child
+                $sqlApplicant = "SELECT applicant_id FROM child WHERE child_id = ?";
+                $stmtApplicant = $conn->prepare($sqlApplicant);
+                $stmtApplicant->bind_param("i", $childId);
+                $stmtApplicant->execute();
+                $resultApplicant = $stmtApplicant->get_result();
+
+                if ($rowApplicant = $resultApplicant->fetch_assoc()) {
+                    $applicant_id = $rowApplicant['applicant_id'];
+
+                    // Send email notification to the applicant
+                    $mail = new Mails();
+                    $mail->sendSchoolSelectionNotification(); // Call the method to send emails
+                }
+
                 echo json_encode(["message" => "Approval status updated successfully!", "scl_approval" => $sclApproval]);
             } else {
                 echo json_encode(["error" => "Failed to update approval status: " . $stmt->error]);

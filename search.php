@@ -27,7 +27,7 @@
         <div class="grid-container">
             <!-- Admin Search -->
             <div class="grid-item">
-                <img src="image/admin_search.webp" alt="">
+                <img src="image/search_admin.jpeg" alt="">
                 <h3>Admin</h3>
                 <p>Search admin records.</p>
                 <a href="search_admin.php">

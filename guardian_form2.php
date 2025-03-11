@@ -1,6 +1,6 @@
 <?php
 session_start();  // Start the session
-
+require_once __DIR__ ."/Mail.php";
 // Database connection parameters
 $host = 'localhost:3306';
 $username = 'dbgavee';
@@ -103,6 +103,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $messages[] = "$field_name uploaded successfully.";
                     return $file_path;
                 }
+                
+
             } else {
                 $messages[] = "Error uploading $field_name.";
             }
@@ -120,6 +122,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             if ($conn->query($sql_docs) === TRUE) {
                 $messages[] = "Documents uploaded and saved successfully!";
+            
+                // Fetch GN email and name based on applicant_id
+$gn_sql = "SELECT gn_email, gn_name FROM grama_niladhari WHERE gn_area_id IN
+(
+    SELECT gn_area_id 
+    FROM applicant_gn_area 
+    WHERE applicant_id = '$applicant_id'
+)";
+$gn_result = $conn->query($gn_sql);
+
+if ($gn_result->num_rows > 0) {
+$gn_data = $gn_result->fetch_assoc();
+$gn_email = $gn_data['gn_email'];
+$gn_name = $gn_data['gn_name'];
+
+// Pass values to JavaScript for sending email
+$mail = new Mails();
+$mail->sendDocumentUploadNotification($applicant_id);
+} else {
+$messages[] = "No GN email found for the applicant.";
+}
+
             } else {
                 $messages[] = "Error: " . $conn->error;
             }
@@ -157,53 +181,6 @@ if (!isset($_SESSION['applicant_id'])) {
     die("Applicant not logged in.");
 }
 
-$applicant_id = $_SESSION['applicant_id'];
-
-// Check if the applicant has uploaded all documents
-$sql = "
-    SELECT recideint_doc, water_bill, electrycity_bill
-    FROM recidencial_doc
-    WHERE applicant_id = $applicant_id
-";
-$result = $conn->query($sql);
-
-if ($result->num_rows > 0) {
-    $row = $result->fetch_assoc();
-
-    // Ensure all required documents are uploaded
-    if (!empty($row['recideint_doc']) && !empty($row['water_bill']) && !empty($row['electrycity_bill'])) {
-        // Fetch GN email and name
-        $gn_sql = "
-            SELECT gn.gn_email, gn.gn_name
-            FROM grama_niladhari gn
-            INNER JOIN applicant_gn_area aga ON gn.gn_area_id = aga.gn_area_id
-            WHERE aga.applicant_id = $applicant_id
-        ";
-        $gn_result = $conn->query($gn_sql);
-
-        if ($gn_result->num_rows > 0) {
-            $gn_data = $gn_result->fetch_assoc();
-            $gn_email = $gn_data['gn_email'];
-            $gn_name = $gn_data['gn_name'];
-
-            // Pass the required data to the front end
-            echo "<script>
-                const gnEmail = '$gn_email';
-                const gnName = '$gn_name';
-                const applicantId = '$applicant_id';
-                sendEmailToGN(); // Trigger email only after all checks are complete
-            </script>";
-        } else {
-            die("No GN email found for the provided applicant.");
-        }
-    } else {
-        echo "<script>alert('Please upload all required documents before proceeding.');</script>";
-        die("Applicant has not uploaded all required documents.");
-    }
-} else {
-    echo "<script>alert('No documents found for the applicant.');</script>";
-    die("No documents found for the applicant.");
-}
 
 // Close connection
 $conn->close();
@@ -232,7 +209,8 @@ $messages_json = json_encode($messages);
     integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" 
     crossorigin="anonymous" referrerpolicy="no-referrer" />	
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
 </head>
 
 
@@ -487,6 +465,28 @@ $messages_json = json_encode($messages);
                         confirmButtonText: 'OK'
                     });
                 }
+            }
+
+            
+            (function(){
+                emailjs.init("qf9nc2kBWCuNMQvw4"); // Replace with your EmailJS Public Key
+            })();
+
+            function sendEmailToGN(gnEmail, gnName, applicantId) {
+                var params = {
+                    gn_email: gnEmail,
+                    applicant_id: applicantId,
+                    gn_name: gnName
+                };
+
+                emailjs.send("service_rax0e79", "template_iu8aje6", params)
+                    .then(function(response) {
+                        console.log("Email Sent Successfully", response.status, response.text);
+                        alert("Email sent successfully to " + gnEmail);
+                    }, function(error) {
+                        console.log("Email Sending Failed", error);
+                        alert("Failed to send email.");
+                    });
             }
         </script>
 

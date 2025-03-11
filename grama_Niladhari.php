@@ -44,7 +44,7 @@ $stmt->execute();
 $result = $stmt->get_result();
 
 
-// **CHANGED SECTION: Handle AJAX request to update guardian approval status**
+//Handle AJAX request to update guardian approval status
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['applicant_id'], $_POST['approval_status'])) {
         // Sanitize inputs
@@ -89,13 +89,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 
-
-
-
 $conn->close();
 
 $messages_json = json_encode($messages);
 ?>
+
 
 
 
@@ -195,7 +193,7 @@ background-image: linear-gradient(315deg, #4834d4 0%, #0c0c0c 74%);
         <thead>
             <tr>
                 <th>ID</th>
-                <th>First Name</th>
+                <th>Name of the applicant</th>
                 <th>Gender</th>
                 <th>Address</th>
                 <th>NIC</th>
@@ -238,7 +236,11 @@ background-image: linear-gradient(315deg, #4834d4 0%, #0c0c0c 74%);
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
+
+
 <script>
+
+// event listeners to the Approve and Reject buttons.
 document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.approve-btn').forEach(button => {
         button.addEventListener('click', () => {

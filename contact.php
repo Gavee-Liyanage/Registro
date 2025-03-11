@@ -14,6 +14,7 @@
             display: flex;
             justify-content: space-between;
             padding: 10px;
+            color:#94c8f2;
         }
 
         .navbar .left-nav a, .navbar .dropdown .dropbtn {
@@ -124,26 +125,27 @@
             height: 400px;
             border: 0;
         }
+
+        /* logo Style */
+       .navbar right-nav{
+        display: flex;
+        align-items: center;
+       }
+
     </style>
 </head>
+
 <body>
     <div class="navbar">
         <div class="left-nav">
-            <a href="#">Home</a>
-            <a href="#">About</a>
-            <div class="dropdown">
-                <button class="dropbtn" aria-label="Users dropdown">Users <i class="fa-solid fa-angle-down" style="color: #4f555f;"></i></button>
-                <div class="dropdown-content">
-                    <a href="#">Admin</a>
-                    <a href="#">Grama Niladhari</a>
-                    <a href="#">Panel Members</a>
-                    <a href="#">Applicant</a>
-                </div>
-            </div>
-            <a href="contact.php">Contact</a>
+        <a href="index.php"> Home </a>
+        <a href="about.php"> About </a>
+
+            
         </div>
         <div class="right-nav">
-            <a href="#" class="Registro">Registro</a>
+                <a class="Registro"> Registro </a>
+                
         </div>
     </div>
 
